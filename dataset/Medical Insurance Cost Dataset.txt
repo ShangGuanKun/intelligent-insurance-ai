@@ -1,0 +1,4 @@
+
+name : Medical Insurance Cost Dataset
+intro : Predict health insurance charges based on demographic and lifestyle factors
+source : https://www.kaggle.com/datasets/mosapabdelghany/medical-insurance-cost-dataset?resource=download

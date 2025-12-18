@@ -1,0 +1,11 @@
+chromadb>=0.4
+Flask>=2.2
+
+sentence-transformers>=2.2
+torch
+
+numpy>=1.22
+pandas>=1.5
+tqdm
+
+matplotlib

@@ -13,22 +13,24 @@ This project is designed as a **microservice-based architecture** and is suitabl
 ## ✨ Key Features
 
 * **Conversational Insurance Consultation**
-  Uses an LLM to guide users through structured slot filling.
+  LLM-driven conversation flow with structured slot filling and explicit state management.
 
 * **Premium Prediction (ML Service)**
-  Predicts insurance premium based on user features using a trained XGBoost model.
+  Feature-engineered XGBoost model exposed via a RESTful Flask service for real-time inference.
 
 * **Product Recommendation (RAG Service)**
-  Retrieves relevant insurance products and explanations via ChromaDB + embeddings.
+  Embedding-based retrieval using ChromaDB with prompt-grounded product explanations.
 
 * **Scalable Microservice Design**
-  Each service is independently deployable and maintainable.
+  Clear separation of concerns across LLM orchestration, ML inference, and retrieval services.
 
 ---
 
 ## 🏗️ System Architecture
 
 ![Architecture](images/RAG.jpeg)
+
+The system is designed to decouple **LLM orchestration**, **ML inference**, and **retrieval logic**, allowing each component to scale, evolve, and be maintained independently.
 
 **Services Overview**:
 
@@ -50,8 +52,8 @@ This project is designed as a **microservice-based architecture** and is suitabl
 ├── orchestrator/      # LLM orchestration service (Flask)
 ├── ml-service/        # ML prediction service (Flask + XGBoost)
 ├── rag-service/       # RAG recommendation service (Flask + ChromaDB)
-├── data/              # Sample input data
-├── dataset/           # Training datasets
+├── data/              # Schema & synthetic sample data (no real products)
+├── dataset/           # ML training dataset (not redistributed)
 ├── models/            # Trained ML models
 ├── scripts/           # Utility & test scripts
 ├── images/            # Architecture & demo screenshots
@@ -69,6 +71,26 @@ This project is designed as a **microservice-based architecture** and is suitabl
 * **Backend**: Flask
 * **Frontend**: React
 * **Env Management**: `uv` (recommended)
+
+---
+
+## 📊 Dataset
+
+The ML service is trained using the following publicly available dataset:
+
+* **Name**: Medical Insurance Cost Dataset
+* **Description**: Predicts health insurance charges based on demographic and lifestyle factors
+* **Source**: Kaggle
+* **URL**: [https://www.kaggle.com/datasets/mosapabdelghany/medical-insurance-cost-dataset](https://www.kaggle.com/datasets/mosapabdelghany/medical-insurance-cost-dataset)
+
+The raw dataset file is **not included** in this repository.
+Users can download it directly from the original source and place it under:
+
+```
+/dataset/insurance.csv
+```
+
+This approach respects the original dataset license and keeps the repository lightweight.
 
 ---
 
@@ -146,6 +168,19 @@ Sample screenshots and results can be found in the `images/` directory, includin
 
 ---
 
+## 🗂️ Data Disclaimer
+
+The repository does **not include real insurance product data**.
+
+Any sample data used by the RAG pipeline is either:
+
+* Synthetic (fictional) data, or
+* User-provided at runtime
+
+This design ensures compliance with data usage policies while focusing on system architecture, retrieval logic, and model integration.
+
+---
+
 ## 🚀 Future Improvements
 
 * Docker & docker-compose support
@@ -157,5 +192,4 @@ Sample screenshots and results can be found in the `images/` directory, includin
 
 ## 📜 License
 
-This project is released for **educational and portfolio purposes**.
-
+This project is released for **educational and portfolio purposes only** and is not intended for direct production use.
