@@ -8,7 +8,7 @@ An end-to-end **AI-powered insurance consultation system** that combines:
 
 This project is designed as a **microservice-based architecture** and is suitable as a public GitHub portfolio project.
 
----
+--- 
 
 ## ✨ Key Features
 
