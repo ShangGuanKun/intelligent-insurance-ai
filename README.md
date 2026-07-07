@@ -192,4 +192,4 @@ This design ensures compliance with data usage policies while focusing on system
 
 ## 📜 License
 
-This project is released for **educational and portfolio purposes only** and is not intended for direct production use.
+This project is released for **educational and portfolio purposes only** and is not intended for direct production use. 
